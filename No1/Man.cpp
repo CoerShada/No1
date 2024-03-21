@@ -6,8 +6,8 @@ Man::Man() {
 }
 
 Man::Man(const string &allName, string birth_date) {
-	setAllName(allName);
-	setBirthDate(birth_date);
+	SetAllName(allName);
+	SetBirthDate(birth_date);
 }
 
 Man::Man(const Man &man): Man(man.all_name, man.birth_date) {}
@@ -17,19 +17,19 @@ Man::~Man() {
 	delete &birth_date;
 }
 
-void Man::setAllName(const string& all_name) {
+void Man::SetAllName(const string& all_name) {
 	this->all_name = all_name;
 }
 
-void Man::setBirthDate(const string& birth_date) {
+void Man::SetBirthDate(const string& birth_date) {
 	this->all_name = birth_date;
 }
 
-string Man::getAllName() {
+string Man::GetAllName() {
 	return all_name;
 }
 
-string Man::getBirthDate() {
+string Man::GetBirthDate() {
 	return birth_date;
 }
 

@@ -15,11 +15,11 @@ public:
 	Man(const string& all_name, string birth_date);
 	virtual ~Man();
 
-	void setAllName(const string& all_name);
-	void setBirthDate(const string& birth_date);
+	void SetAllName(const string& all_name);
+	void SetBirthDate(const string& birth_date);
 
-	string getAllName();
-	string getBirthDate();
+	string GetAllName();
+	string GetBirthDate();
 
 	friend std::ostream& operator<<(std::ostream& stream, Man& m); 
 	Man& operator=(const Man& m);

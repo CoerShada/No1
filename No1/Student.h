@@ -16,10 +16,10 @@ public:
     Student(const string& allName, string birth_date, string group, string university);
     virtual ~Student();
 
-    void setGroup(string group);
-    void setUniversity(string& university);
+    void SetGroup(string group);
+    void SetUniversity(string& university);
 
-    string getGroup();
-    string getUniversity();
+    string GetGroup();
+    string GetUniversity();
 };
 

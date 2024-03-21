@@ -15,8 +15,8 @@ Student::Student(Student& student) {
 
 Student::Student(const string& allName, string birth_date, string group, string university): Man(all_name, birth_date)
 {
-	setGroup(group);
-	setUniversity(university);
+	SetGroup(group);
+	SetUniversity(university);
 }
 
 Student::~Student()
@@ -25,22 +25,22 @@ Student::~Student()
 	delete& university;
 }
 
-void Student::setGroup(string group)
+void Student::SetGroup(string group)
 {
 	this->group = group;
 }
 
-void Student::setUniversity(string& university)
+void Student::SetUniversity(string& university)
 {
 	this->university = university;
 }
 
-string Student::getGroup()
+string Student::GetGroup()
 {
 	return group;
 }
 
-string Student::getUniversity()
+string Student::GetUniversity()
 {
 	return university;
 }
