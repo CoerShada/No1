@@ -1,12 +1,14 @@
 #include "Student.h"
 
 using namespace std;
-Student::Student() : Man() {
+Student::Student() : Man() 
+{
 	group = "Unknown group";
 	university = "Unknow university";
 }
 
-Student::Student(Student& student) {
+Student::Student(Student& student) 
+{
 	all_name = student.all_name;
 	birth_date = student.birth_date;
 	group = student.group;
