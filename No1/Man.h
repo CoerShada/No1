@@ -1,25 +1,24 @@
 #pragma once
-#include <string>
 #include <iostream>
 
 using namespace std;
 class Man
 {
 protected:
-	string all_name;
-	string birth_date;
+	char* all_name;
+	char* birth_date;
 
 public:
 	Man();
 	Man(const Man &man);
-	Man(const string& all_name, string birth_date);
+	Man(const char* all_name, const char* birth_date);
 	virtual ~Man();
 
-	void SetAllName(const string& all_name);
-	void SetBirthDate(const string& birth_date);
+	void SetAllName(const char* all_name);
+	void SetBirthDate(const char* birth_date);
 
-	string GetAllName();
-	string GetBirthDate();
+	char* GetAllName();
+	char* GetBirthDate();
 
 	friend std::ostream& operator<<(std::ostream& stream, Man& m); 
 	Man& operator=(const Man& m);

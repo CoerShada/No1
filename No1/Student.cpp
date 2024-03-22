@@ -3,19 +3,20 @@
 using namespace std;
 Student::Student() : Man() 
 {
-	group = "Unknown group";
-	university = "Unknow university";
+	SetGroup("Unknown group");
+	SetUniversity("Unknow university");
+
 }
 
 Student::Student(Student& student) 
 {
-	all_name = student.all_name;
-	birth_date = student.birth_date;
-	group = student.group;
-	university = student.university;
+	SetAllName(student.all_name);
+	SetBirthDate(student.birth_date);
+	SetUniversity(student.university);
+	SetGroup(student.group);
 }
 
-Student::Student(const string& allName, string birth_date, string group, string university): Man(all_name, birth_date)
+Student::Student(const char* all_name, const char* birth_date, const char* group, const char* university): Man(all_name, birth_date)
 {
 	SetGroup(group);
 	SetUniversity(university);
@@ -23,26 +24,43 @@ Student::Student(const string& allName, string birth_date, string group, string 
 
 Student::~Student()
 {
-	delete& group;
-	delete& university;
+	delete group;
+	delete university;
 }
 
-void Student::SetGroup(string group)
+void Student::SetGroup(const char* group)
 {
-	this->group = group;
+	int len = strlen(group) + 1;
+	this->group = new char[len];
+	strcpy_s(this->group, len, group);
 }
 
-void Student::SetUniversity(string& university)
+void Student::SetUniversity(const char* university)
 {
-	this->university = university;
+	int len = strlen(university) + 1;
+	this->university = new char[len];
+	strcpy_s(this->university, len, university);
 }
 
-string Student::GetGroup()
+char* Student::GetGroup()
 {
 	return group;
 }
 
-string Student::GetUniversity()
+char* Student::GetUniversity()
 {
 	return university;
+}
+
+std::ostream& operator<<(std::ostream& stream, Student& student) {
+	return stream << "all_name = " << student.all_name << ", birht_date = " << student.birth_date << ", group = " << student.group << ", university = " << student.university;
+}
+
+Student& Student::operator=(const Student& student)
+{
+	SetAllName(student.all_name);
+	SetBirthDate(student.birth_date);
+	SetUniversity(student.university);
+	SetGroup(student.group);
+	return *this;
 }
