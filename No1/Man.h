@@ -20,7 +20,7 @@ public:
 	char* GetAllName();
 	char* GetBirthDate();
 
-	friend std::ostream& operator<<(std::ostream& stream, Man& m); 
-	Man& operator=(const Man& m);
+	friend std::ostream& operator<<(std::ostream& stream, Man& man); 
+	Man& operator=(const Man& man);
 };
 
