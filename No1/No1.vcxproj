@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Man.cpp" />
     <ClCompile Include="No1.cpp" />
     <ClCompile Include="Student.cpp" />
