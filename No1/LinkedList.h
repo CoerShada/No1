@@ -22,6 +22,12 @@ private:
 			this->m_next_item = nullptr;
 		}
 
+		~ListItem() 
+		{
+			if (m_next_item != nullptr)
+				delete m_next_item;
+		}
+
 		ListItem* GetNext() 
 		{
 			return m_next_item;
@@ -106,8 +112,9 @@ public:
 
 		if (prev) {
 			prev->m_next_item = cur_item->m_next_item;
-			cur_item->m_next_item = prev;
-		} else {
+			cur_item->m_next_item = nullptr;
+		}
+		else {
 			m_first_item = cur_item->m_next_item;
 		}
 
